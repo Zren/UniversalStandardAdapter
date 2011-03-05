@@ -2,6 +2,7 @@ package de.xzise.usa;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 import org.bukkit.ChatColor;
@@ -15,7 +16,7 @@ import de.xzise.usa.adapters.permission.PermissionAdapter;
 
 public class UniveralStandardAdapter extends JavaPlugin {
 	
-	private static final Map<String, Class<? extends Adapter>> ADAPTER_NAMES = new HashMap<String, Class<? extends Adapter>>();
+	private static final ConcurrentHashMap<String, Class<? extends Adapter>> ADAPTER_NAMES = new ConcurrentHashMap<String, Class<? extends Adapter>>();
 	
 	static {
 		ADAPTER_NAMES.put("permissions", PermissionAdapter.class);
